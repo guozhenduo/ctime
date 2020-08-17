@@ -4,6 +4,7 @@ This is a time tool written in C language.
 There are still some overly lengthy code that will be improved in the next release
 
 # Usage
+`ctime` does not require any configuration.
 ```bash
 $ git clone https://github.com/guozhenduo/ctime
 $ cd ctime
