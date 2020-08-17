@@ -4,4 +4,4 @@
 #include "smain1.c"
 #include "csf.c"
 #include "chtime.c"
-int montage(void);
+
