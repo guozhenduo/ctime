@@ -121,7 +121,7 @@ int cal_wdw(int year,int month,int day) // which days of the weeks
 	int c = ((year / 1000 % 10) * 10  + ((year / 100 % 10) * 100));
 	if (month == 1 || month == 2)  month += 12,year--;
 	int y = ((year / 10 % 10) * 10) + year % 10,m = month,d = day;
-	int result = ((int)(y + floor(y / 4) + floor(c / 4) - (2 * c) + floor(26 * (m + 1) / 10) + d - 1)) % 7 ;
+	int result = ((int)(y + floor(y / 4) + floor(c / 4) - (2 * c) + floor(26 * (m + 1) / 10) + d - 1)) % 7 ; // Zeller's congruence
 
 	if (result == 0) result = 7;
 
