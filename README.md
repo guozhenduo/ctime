@@ -7,6 +7,7 @@ There are still some overly lengthy code that will be improved in the next relea
 `ctime` does not require any configuration.
 ```bash
 $ git clone https://github.com/guozhenduo/ctime
+Wait...
 $ cd ctime
 $ gcc main.c -o time# Don't run "gcc main.h"
 $ ./time
