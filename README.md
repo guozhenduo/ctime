@@ -4,12 +4,13 @@ This is a time tool written in C language.
 There are still some overly lengthy code that will be improved in the next release
 
 # Usage
-`ctime` does not require any configuration.
+`ctime` doesn't require any configuration from you.
+
 ```bash
 $ git clone https://github.com/guozhenduo/ctime
 Wait...
 $ cd ctime
-$ gcc main.c -o time# Don't run "gcc main.h"
+$ gcc main.c -o time # Don't run "gcc main.h"
 $ ./time
 We offer the following services(still to be expanded)
  1. Calculate the days after a day in a year
