@@ -12,6 +12,7 @@ Wait...
 $ cd ctime
 $ gcc main.c -o time # Don't run "gcc main.h"
 $ ./time
+ctime> start
 We offer the following services(still to be expanded)
  1. Calculate the days after a day in a year
  2. Calculate the day of the week for a date
@@ -27,5 +28,6 @@ Enter the year: 2020
 2020-3-13
 2020-11-13
 There are two black Fridays in 2020
+ctime> exit
 $ 
 ```
