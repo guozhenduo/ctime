@@ -1,4 +1,4 @@
-#include "main.h"
+#include "ctime.h"
 
 int main(void)
 {
