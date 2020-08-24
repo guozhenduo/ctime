@@ -34,3 +34,5 @@ $
 
 # mode
 `ctime` has a command mode that starts automatically at the beginning.
+
+It will add more.
