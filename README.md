@@ -31,3 +31,6 @@ There are two black Fridays in 2020
 ctime> exit
 $ 
 ```
+
+# mode
+`ctime` has a command mode that starts automatically at the beginning.
