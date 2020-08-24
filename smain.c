@@ -2,11 +2,12 @@
 * Author: SuChenguo                                          *
 * Maintainer: SuChenguo                                      *
 * Create time: 2020 Aug 06 11:23                             *
-* Update time: 2020 Aug 17 10:41                             *
+* Update time: 2020 Aug 24 10:44                             *
 * VERSION: 0.1                                               *
 * If you compile main.c with multiple warnings,please ignore *
 * Run result like it:                                        *
 * $ ./time                                                   *
+* ctime> start                                               *
 * We offer the following services(still to be expanded)      *
 *  1. Calculate the days after a day in a year               *
 *  2. Calculate the day of the week for a date               *
@@ -17,10 +18,12 @@
 *  7. Calculate the date and quantity of Black Friday        *
 *  8. Calculate the interval of two dates                    *
 *  ......                                                    *
-* Do you want use(choice 1~8,don't enter other)? 1           * 
+* Press 1 to 8 to choice: 1                                  * 
 * Enter the year(format: YEAR-MONTH-DAY): 2020-4-21          *
 * Enter the offset: 16                                       *
 * 2020-4-21 in two days,it's 2020-5-6                        *
+* ctime> exit                                                *
+* $                                                          *
 * More ways to use it are waiting for you to find out        *
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  */
 
@@ -30,6 +33,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
+#include <stdlib.h>
 
 /* define constant block */
 
@@ -66,6 +70,7 @@ int mday(void);
 int zodiac(void);
 int bf(void);
 int idays(void);
+int montage(void);
 
 int is_leap(int year)
 {
@@ -138,6 +143,17 @@ int wdw(void)  // Corresponding to 2
 	return 0;
 }
 
+int command(void)
+{
+    char string[10];
+	while (1)
+	{
+		printf("ctime> ");
+		scanf("%s",string);
+		if (strcmp("exit",string) == 0) exit(123);
+		else if (strcmp("start",string) == 0) montage();
+	}
+} 
 
 int montage(void)  
 { 
@@ -145,7 +161,7 @@ int montage(void)
 	printf(" 1. Calculate the days after a day in a year \n 2. Calculate the day of the week for a date \n 3. Calculate the date of mother's day in a year \n ");
 	printf("4. Calculating the zodiac of a year \n 5. Calculate the days after the year \n 6. Calculate the date of father's day in a year \n ");
 	printf("7. Calculate the date and quantity of Black Friday \n 8. Calculate the interval of two dates  \n ...... \n");
-	printf("Do you want use(choice 1~8,don't enter other)? ");
+	printf("Press 1 to 8 to choice: ");
 	int op = 0;
 	scanf("%d",&op);
 	if (op == 1) day_add();
