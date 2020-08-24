@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	montage();
+	command();
 
 	return 0;
 }

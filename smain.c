@@ -150,7 +150,7 @@ int command(void) // command mode function
 	{
 		printf("ctime> ");
 		scanf("%s",string);
-		if (strcmp("exit",string) == 0) exit(123); // exit command mode
+		if (strcmp("exit",string) == 0) return 0; // exit command mode
 		else if (strcmp("start",string) == 0) montage(); // start use
 	}
 } 

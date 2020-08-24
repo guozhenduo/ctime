@@ -32,7 +32,13 @@ ctime> exit
 $ 
 ```
 
+# Sample
+Look at sample1.c,sample2.c,sample3.c,sample1.py .
+
 # mode
 `ctime` has a command mode that starts automatically at the beginning.
 
 It will add more.
+
+# License 
+[![MIT License](https://github.com/guozhenduo/ctime/blob/master/LICENSE)]
