@@ -41,4 +41,4 @@ Look at sample1.c,sample2.c,sample3.c,sample1.py .
 It will add more.
 
 # License 
-![MIT License](https://github.com/guozhenduo/ctime/blob/master/LICENSE)
+[MIT License](https://github.com/guozhenduo/ctime/blob/master/LICENSE)
