@@ -143,19 +143,19 @@ int wdw(void)  // Corresponding to 2
 	return 0;
 }
 
-int command(void)
+int command(void) // command mode function
 {
     char string[10];
 	while (1)
 	{
 		printf("ctime> ");
 		scanf("%s",string);
-		if (strcmp("exit",string) == 0) exit(123);
-		else if (strcmp("start",string) == 0) montage();
+		if (strcmp("exit",string) == 0) exit(123); // exit command mode
+		else if (strcmp("start",string) == 0) montage(); // start use
 	}
 } 
 
-int montage(void)  
+int montage(void) 
 { 
 	printf("We offer the following services(still to be expanded) \n");
 	printf(" 1. Calculate the days after a day in a year \n 2. Calculate the day of the week for a date \n 3. Calculate the date of mother's day in a year \n ");
