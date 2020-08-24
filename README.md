@@ -10,7 +10,9 @@ There are still some overly lengthy code that will be improved in the next relea
 $ git clone https://github.com/guozhenduo/ctime
 Wait...
 $ cd ctime
-$ gcc main.c -o time # Don't run "gcc main.h"
+$ make
+gcc main.c -o time
+gcc -fPIC -shared main.c -o main.so
 $ ./time
 ctime> start
 We offer the following services(still to be expanded)
