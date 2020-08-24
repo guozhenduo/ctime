@@ -5,6 +5,10 @@ ctime = CDLL("./ctime.so")
 """
 Compile command:
   gcc -fPIC -shared main.c -o main.so
+
+  or 
+
+  make
 """
 
 # It's ready to use
