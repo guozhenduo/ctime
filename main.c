@@ -4,10 +4,10 @@
 #include "chtime.c"
 
 int montage(void);
-int command(void);
+int choice(void);
 
 int main(void)
 {
-	command();
-    montage();
+    command();
+    choice();
 }
