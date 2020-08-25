@@ -70,7 +70,7 @@ int mday(void);
 int zodiac(void);
 int bf(void);
 int idays(void);
-int montage(void);
+int choice(void);
 
 int is_leap(int year)
 {
@@ -151,7 +151,7 @@ int command(void) // command mode function
 		printf("ctime> ");
 		scanf("%s",string);
 		if (strcmp("exit",string) == 0) return 0; // exit command mode
-		else if (strcmp("start",string) == 0) montage(); // start use
+		else if (strcmp("start",string) == 0) choice(); // start use
 	}
 } 
 
