@@ -18,7 +18,7 @@ int day_add(void);
 int cal_wdw(int year,int month,int day);
 int wdw(void);
 int command(void);
-int montage(void);
+int choice(void);
 int * cal_dafy(int year,int day,int res[]);
 int dafy(void);
 int interval_days(int start[],int end[]);
