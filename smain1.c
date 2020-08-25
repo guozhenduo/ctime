@@ -4,6 +4,8 @@
 
 extern char table6[][12];
 
+int * cal_day_add(int year,int month,int day,int offset,int res[]);
+
 int month_day[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
  
 int * cal_dafy(int year,int day,int res[])
@@ -34,7 +36,7 @@ int dafy(void) // day after year
 
 int interval_days(int start[],int end[])
 {
-        int count = 0,year_days = 0,i = 0;
+    int count = 0,year_days = 0,i = 0;
 	if (start[2] > end[2]) count -= (start[2] > end[2]);
 	if (start[2] < end[2]) count += (end[2] - start[2]);
 	start[2] = end[2];
@@ -43,7 +45,7 @@ int interval_days(int start[],int end[])
 	{
 		while (start[1] != end[1])
 		{
-		        i = start[1] - 1; // i is a month number
+		    i = start[1] - 1; // i is a month number
 			count += month_day[i];
 			start[1]++;
 	        }
@@ -51,9 +53,9 @@ int interval_days(int start[],int end[])
 
 	if (start[1] > end[1])
 	{
-	        while (start[1] != end[1])
+	    while (start[1] != end[1])
 		{
-		        i = start[1] - 1;
+		    i = start[1] - 1;
 			count -= month_day[i];
 			start[1]--;
 		}
@@ -63,7 +65,7 @@ int interval_days(int start[],int end[])
 	{
 		while (start[0] != end[0])
 		{
-		        year_days = is_leap(start[0] + 1) ?366 : 365;
+		    year_days = is_leap(start[0] + 1) ?366 : 365;
 			count += year_days;
 			start[0]++;
 		}
@@ -73,7 +75,7 @@ int interval_days(int start[],int end[])
 	{
 	    while (start[0] != end[0])
 		{
-		        year_days = is_leap(start[0] - 1) ? 366 : 365;
+		    year_days = is_leap(start[0] - 1) ? 366 : 365;
 			count -= year_days;
 			start[0]--;
 		}
@@ -84,13 +86,29 @@ int interval_days(int start[],int end[])
 
 int idays(void)
 {
-        int start_date[3] = {0,0,0};int end_date[3] = {0,0,0};
+    int start_date[3] = {0,0,0};int end_date[3] = {0,0,0};
 	printf("Enter the start date(format:YEAR-MONTH-DAY): ");
 	scanf("%d-%d-%d",&start_date[0],&start_date[1],&start_date[2]);
 	printf("Enter the end date(format:YEAR-MONTH-DAY): ");
-        scanf("%d-%d-%d",&end_date[0],&end_date[1],&end_date[2]);
+    scanf("%d-%d-%d",&end_date[0],&end_date[1],&end_date[2]);
 	printf("The two dates are %d days apart \n",interval_days(start_date,end_date));
 
 	return 0;
 }
 
+int * cal_sday(int year,int day,int res[]) 
+{
+	int result[3];
+	return cal_day_add(year - 1,12,31,day,result);
+}
+
+int sday(void)
+{
+	int result[3];
+	printf("Enter year and day: ");
+	int days,year;scanf("%d %d",&year,&days);
+	int *u = cal_sday(2020,days,result);
+	printf("The No.%d day of %d is %d-%d-%d \n",days,year,*(u + 0),*(u + 1),*(u + 2));
+
+	return 0;
+}

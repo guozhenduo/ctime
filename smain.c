@@ -4,26 +4,7 @@
 * Create time: 2020 Aug 06 11:23                             *
 * Update time: 2020 Aug 24 10:44                             *
 * VERSION: 0.1                                               *
-* If you compile main.c with multiple warnings,please ignore *
-* Run result like it:                                        *
-* $ ./time                                                   *
-* ctime> start                                               *
-* We offer the following services(still to be expanded)      *
-*  1. Calculate the days after a day in a year               *
-*  2. Calculate the day of the week for a date               *
-*  3. Calculate the date of mother's day in a year           *
-*  4. Calculating the zodiac of a year                       *
-*  5. Calculate the days after the year                      *
-*  6. Calculate the date of father's day in a year           *
-*  7. Calculate the date and quantity of Black Friday        *
-*  8. Calculate the interval of two dates                    *
-*  ......                                                    *
-* Press 1 to 8 to choice: 1                                  * 
-* Enter the year(format: YEAR-MONTH-DAY): 2020-4-21          *
-* Enter the offset: 16                                       *
-* 2020-4-21 in two days,it's 2020-5-6                        *
-* ctime> exit                                                *
-* $                                                          *
+* LINCENSE: MIT License                                      *
 * More ways to use it are waiting for you to find out        *
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  */
 
@@ -71,6 +52,7 @@ int zodiac(void);
 int bf(void);
 int idays(void);
 int choice(void);
+int sday(void);
 
 int is_leap(int year)
 {
@@ -160,8 +142,9 @@ int choice(void)
 	printf("We offer the following services(still to be expanded) \n");
 	printf(" 1. Calculate the days after a day in a year \n 2. Calculate the day of the week for a date \n 3. Calculate the date of mother's day in a year \n ");
 	printf("4. Calculating the zodiac of a year \n 5. Calculate the days after the year \n 6. Calculate the date of father's day in a year \n ");
-	printf("7. Calculate the date and quantity of Black Friday \n 8. Calculate the interval of two dates  \n ...... \n");
-	printf("Press 1 to 8 to choice: ");
+	printf("7. Calculate the date and quantity of Black Friday \n 8. Calculate the interval of two dates  \n ");
+	printf("9. Calculate the day of the year on which date \n ...... \n");
+	printf("Press 1 to 9 to choice: ");
 	int op = 0;
 	scanf("%d",&op);
 	if (op == 1) day_add();
@@ -179,6 +162,8 @@ int choice(void)
 	if (op == 7) bf();
 
 	if (op == 8) idays();
-	
+
+	if (op == 9) sday();
+
 	return 0;
 }

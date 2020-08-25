@@ -31,3 +31,5 @@ int cal_fday(int year);
 int fday(void);
 int * cal_bf(int year);
 int bf(void);
+int sday(void);
+int * cal_sday(int year,int day,int res[]) ;

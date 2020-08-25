@@ -24,8 +24,9 @@ We offer the following services(still to be expanded)
  6. Calculate the date of father's day in a year
  7. Calculate the date and quantity of Black Friday
  8. Calculate the interval of two dates
+ 9. Calculate the day of the year on which date
  ......
-Do you want use(choice 1~8,don't enter other)? 7
+Press 1 to 9 to choice: 7
 Enter the year: 2020
 2020-3-13
 2020-11-13
