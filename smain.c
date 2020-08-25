@@ -155,7 +155,7 @@ int command(void) // command mode function
 	}
 } 
 
-int montage(void) 
+int choice(void) 
 { 
 	printf("We offer the following services(still to be expanded) \n");
 	printf(" 1. Calculate the days after a day in a year \n 2. Calculate the day of the week for a date \n 3. Calculate the date of mother's day in a year \n ");
