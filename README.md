@@ -38,7 +38,9 @@ $
 Look at sample1.c,sample2.c,sample3.c,sample1.py .
 
 # mode
-`ctime` has a command mode that starts automatically at the beginning.
+`ctime mode`
+ - command
+ - choice
 
 It will add more.
 
