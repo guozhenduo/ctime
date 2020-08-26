@@ -57,113 +57,112 @@ int dayew(void);
 
 int is_leap(int year)
 {
-	return year % 4 == 0 ? 1 : 0; // if  +year % 4 == 0 return value is 1 else 0
+    return year % 4 == 0 ? 1 : 0; // if  +year % 4 == 0 return value is 1 else 0
 }
 
 int month_days(int the_year,int the_month)
 {
-	if (1 or 3 or 5 or 7 or 8 or 10 or 12) return 31;
-	if (4 or 6 or 9 or 11) return 30;
+    if (1 or 3 or 5 or 7 or 8 or 10 or 12) return 31;
+    if (4 or 6 or 9 or 11) return 30;
 
-	if (the_year % 4 == 0 && the_month == 2) return 29;
-	else return 28;
+    if (the_year % 4 == 0 && the_month == 2) return 29;
+    else return 28;
 
-	return 0;
+    return 0;
 }
 
 Date cal_day_add(int year,int month,int day,int offset) // Calculate the days after a day in a year
 {
-	int month_day = month_days(year,month);
-	day += offset;
-	if ((day - month_day) <= 0) { ; }
-	while (day > month_day)
-	{
-		month++;
-		if (month > 12) year++,month = 1;
-		day -= month_days(year,month - 1);
-	}
+    int month_day = month_days(year,month);
+    day += offset;
+    if ((day - month_day) <= 0) { ; }
+	
+    while (day > month_day)
+    {
+       month++;
+       if (month > 12) year++,month = 1;
+       day -= month_days(year,month - 1);
+    }
 
-	Date res = {year,month,day};
+    Date res = {year,month,day};
 
-	return res;
+    return res;
 }
 
 int day_add(void)  // Corresponding to 1
 { 
-	printf("Enter the year(format: YEAR-MONTH-DAY): ");
-	int year = 0,month = 0,day = 0;
-	scanf("%d-%d-%d",&year,&month,&day);
-	int off = 0;  // off isn't office,off is offset
-	printf("Enter the offset: ");
-	scanf("%d",&off);
+    printf("Enter the year(format: YEAR-MONTH-DAY): ");
+    int year = 0,month = 0,day = 0;
+    scanf("%d-%d-%d",&year,&month,&day);
+    int off = 0;  // off isn't office,off is offset
+	
+    printf("Enter the offset: ");
+    scanf("%d",&off);
 
-	Date results = cal_day_add(year,month,day,off);
-	printf("%d-%d-%d in two days,it's ",year,month,day);
-	print(&results);
+    Date results = cal_day_add(year,month,day,off);
+    printf("%d-%d-%d in two days,it's ",year,month,day);
+    print(&results);
 
-	return 0;
-
+    return 0;
 }
 
 int cal_wdw(int year,int month,int day) // which days of the weeks
 {
-	int c = ((year / 1000 % 10) * 10  + ((year / 100 % 10) * 100));
-	if (month == 1 || month == 2)  month += 12,year--;
-	int y = ((year / 10 % 10) * 10) + year % 10,m = month,d = day;
-	int result = ((int)(y + floor(y / 4) + floor(c / 4) - (2 * c) + floor(26 * (m + 1) / 10) + d - 1)) % 7 ; // Zeller's congruence
+    int c = ((year / 1000 % 10) * 10  + ((year / 100 % 10) * 100));
+    if (month == 1 || month == 2)  month += 12,year--;
+	
+    int y = ((year / 10 % 10) * 10) + year % 10,m = month,d = day;
+    int result = ((int)(y + floor(y / 4) + floor(c / 4) - (2 * c) + floor(26 * (m + 1) / 10) + d - 1)) % 7 ; // Zeller's congruence
 
-	if (result == 0) result = 7;
+    if (result == 0) result = 7;
 
-	return result ;
+    return result ;
 }	
 
 int wdw(void)  // Corresponding to 2
 {
-	int year = 0,month,day = 0;
-	printf("Enter the date(format:YEAR-MONTH-DAY): ");scanf("%d-%d-%d",&year,&month,&day);
-	int u = cal_wdw(year,month,day);
-	printf("%s(%d) \n",table2[u - 1],u);
+    int year = 0,month,day = 0;
+    printf("Enter the date(format:YEAR-MONTH-DAY): ");scanf("%d-%d-%d",&year,&month,&day);
+    int u = cal_wdw(year,month,day);
+    printf("%s(%d) \n",table2[u - 1],u);
 	
-	return 0;
+    return 0;
 }
 
 int command(void) // command mode function
 {
-        char string[10];
-	while (1)
-	{
-		printf("ctime> ");
-		scanf("%s",string);
-		if (strcmp("exit",string) == 0) exit(123); // exit command mode
-		else if (strcmp("start",string) == 0) choice(); // start use
-	}
+    char string[10];
+    while (1)
+    {
+        printf("ctime> ");
+	scanf("%s",string);
+        if (strcmp("exit",string) == 0) exit(123); // exit command mode
+        else if (strcmp("start",string) == 0) choice(); // start use
+    }
 } 
 
 int choice(void) 
 { 
-	printf("We offer the following services(still to be expanded) \n");
-	printf(" 1. Calculate the days after a day in a year \n 2. Calculate the day of the week for a date \n 3. Calculate the date of mother's day in a year \n ");
-	printf("4. Calculating the zodiac of a year \n 5. Calculate the day of the year on which date \n 6. Calculate the date of father's day in a year \n ");
-	printf("7. Calculate the date and quantity of Black Friday \n 8. Calculate the interval of two dates  \n ");
-	printf(" \n ...... \n");
-	printf("Press 1 to 9 to choice: ");
-	int op = 0;
-	scanf("%d",&op);
-	if (op == 1) day_add();
+    printf("We offer the following services(still to be expanded) \n");
+    printf(" 1. Calculate the days after a day in a year \n 2. Calculate the day of the week for a date \n 3. Calculate the date of mother's day in a year \n ");
+    printf("4. Calculating the zodiac of a year \n 5. Calculate the day of the year on which date \n 6. Calculate the date of father's day in a year \n ");
+    printf("7. Calculate the date and quantity of Black Friday \n 8. Calculate the interval of two dates  \n ");
+    printf(" \n ...... \n");	
+    printf("Press 1 to 9 to choice: ");
+    int op = 0;
+    scanf("%d",&op);
+    switch (op)
+    {
+	case 1: day_add();return 0;
+	case 2: wdw();return 0;
+	case 3: mday()return 0;
+	case 4: zodiac();return 0;
+	case 5: dayew();return 0;
+        case 6: fday();return 0;
+        case 7: bf();return 0;
+        case 8: idays();return 0; 
+        /* Selecte execution */
+    }
 
-	if (op == 2) wdw();
-
-	if (op == 3) mday();
-
-	if (op == 4) zodiac();
-
-	if (op == 5) dayew();
-
-	if (op == 6) fday();
-
-	if (op == 7) bf();
-
-	if (op == 8) idays();
-
-	return 0;
+    return 0;
 }
