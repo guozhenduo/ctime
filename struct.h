@@ -2,13 +2,13 @@
 
 struct date 
 {
-	int year;
-	int month;
-	int day;
+    int year;
+    int month;
+    int day;
 } ;
 typedef struct date Date;
 
 void print(Date * self)
 {
-	printf("%d-%d-%d \n",self -> year,self -> month,self -> day);
+    printf("%d-%d-%d \n",self -> year,self -> month,self -> day);
 }
