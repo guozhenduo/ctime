@@ -12,6 +12,9 @@ Wait...
 $ cd ctime
 $ make
 gcc main.c -o time
+gcc sample1.c -o C_sample1
+gcc sample2.c -o C_sample2
+gcc sample3.c -o C_sample3
 gcc -fPIC -shared main.c -o main.so
 $ ./time
 ctime> start
