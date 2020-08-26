@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	command();
+    command();
 
-	return 0;
+    return 0;
 }
