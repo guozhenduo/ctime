@@ -28,7 +28,7 @@ int cal_zodiac(int year)  // Calculate the zodiac number of a year and return it
 int zodiac(void)  
 {
 	int year;printf("Enter the year: ");scanf("%d",&year);
-	printf("the zodiac in %d year is '%s' \n",year,table4[cal_zodiac(year)]);
+	printf("the zodiac in %d year is '%s' \n",year,table4[cal_zodiac(year)]); 
 
 	return 0;
 }
