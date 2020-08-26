@@ -17,25 +17,6 @@
 #include <stdlib.h>
 #include "struct.h"
 
-/* define constant block */
-
-/*
-NOTE:
-Some festivals are not on a fixed day. 
-We will provide some functions to calculate the date of that festival.
-*/
-
-#define or ||
-#define NY "1.1" // NY : New Year Day
-#define IW "3.8" // IW : International Women's Day
-#define VD "2.14" // VD : Valentine's Day
-#define AF "4.1" // AF : April Fools' Day
-#define LD "5.1" //LD : Labor Day
-#define CD "6.1" // CD : Children's Day
-#define ND "10.1" // ND : National Day(China)
-#define CM "12.25" // CM : Christmas
-#define CE "12.24" //CE : Christmas Eve
-
 /* define global block */
 int table[12] = {31,28,31,30,31,30,31,31,30,31,30,31}; // days are there in a month
 char table2[][7] = {"Mon.","Tue.","Wed.","Thu.","Fri.","Sat.","Sun."};  // Abbreviation of week
