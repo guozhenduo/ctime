@@ -67,12 +67,13 @@ int bf(void)
     int y = 1,ii;
     for (int i = 1;i <= 12;i++)
     {	
-        ii = *(u + (i - 1));
+        ii = *u;
         if (ii != 0) 
 	{
 	    printf("%d-%d-13 \n",year,ii);
 	    y++;
 	}
+        u++;
     }
 
     printf("There are %s black Fridays in %d \n",table6[y - 2],year);
