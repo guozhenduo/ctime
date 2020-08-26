@@ -53,7 +53,7 @@ int zodiac(void);
 int bf(void);
 int idays(void);
 int choice(void);
-int sday(void);
+int dayew(void);
 
 int is_leap(int year)
 {
@@ -129,7 +129,7 @@ int wdw(void)  // Corresponding to 2
 
 int command(void) // command mode function
 {
-    char string[10];
+        char string[10];
 	while (1)
 	{
 		printf("ctime> ");
