@@ -53,7 +53,7 @@ int zodiac(void);
 int bf(void);
 int idays(void);
 int choice(void);
-int sday(void);
+int dayew(void);
 
 int is_leap(int year)
 {
