@@ -3,5 +3,6 @@
 int main(void)
 {
     command();
-    choice();
+
+    return 0;
 }
