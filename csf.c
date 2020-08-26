@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 // csf : Calculate Special Festival
 extern char table3[][12]; // initialize two arrays
@@ -48,12 +49,9 @@ int fday(void) // father's day
 
 int * cal_bf(int year) // calculate black Friday
 {
-    static int arr[12];
+    static int arr[12] = {0,0,0,0,0,0,0,0,0,0,0,0}; 
     int i = 0;
-    for (int u = 0;u < 12;u++)
-    {
-	arr[u] = 0;
-    }
+
     for (;i <= 12;i++)
     {
         if (cal_wdw(year,i + 1,13) == 5)  arr[i] = i + 1;
