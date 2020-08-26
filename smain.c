@@ -17,6 +17,8 @@
 #include <stdlib.h>
 #include "struct.h"
 
+#define or ||
+
 /* define global block */
 int table[12] = {31,28,31,30,31,30,31,31,30,31,30,31}; // days are there in a month
 char table2[][7] = {"Mon.","Tue.","Wed.","Thu.","Fri.","Sat.","Sun."};  // Abbreviation of week

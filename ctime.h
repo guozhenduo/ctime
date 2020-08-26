@@ -51,5 +51,3 @@ We will provide some functions to calculate the date of that festival.
 #define ND "10.1" // ND : National Day(China)
 #define CM "12.25" // CM : Christmas
 #define CE "12.24" //CE : Christmas Eve
-
-#define or ||
