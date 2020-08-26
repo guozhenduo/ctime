@@ -1,4 +1,4 @@
-all: time C_sample1 C_sample2 C_sample3 main.so 
+install: time C_sample1 C_sample2 C_sample3 main.so 
 
 main.so: main.c 
 	gcc -fPIC -shared main.c -o main.so
