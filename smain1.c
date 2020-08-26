@@ -4,35 +4,10 @@
 
 extern char table6[][12];
 
-int * cal_day_add(int year,int month,int day,int offset,int res[]);
+
+Date cal_day_add(int year,int month,int day,int offset);
 
 int month_day[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
- 
-int * cal_dafy(int year,int day,int res[])
-{
-	int max = is_leap(year) ?  366 : 365,month = 1;
-	if (day > max) return 0;
-	month_day[1] =  is_leap(year) ? 29 : 28;
-	while (day > month_day[month - 1])
-	{
-		day -= month_day[month - 1];
-		month++;
-	}
-
-	res[0] = month, res[1] = day;
-
-	return res;
-}
-
-int dafy(void) // day after year
-{
-	int *u,year = 0,day = 0,arr[2] = {0,0};
-	printf("Enter the year and the day(format:YEAR->DAY): ");scanf("%d->%d",&year,&day);
-	u = cal_dafy(year,day,arr);
-	printf("%s %d(%d-%d) \n",table5[*(u + 0) - 1],*(u + 1),*(u + 0),*(u + 1));
-
-	return 0;
-}
 
 int interval_days(int start[],int end[])
 {
@@ -96,19 +71,18 @@ int idays(void)
 	return 0;
 }
 
-int * cal_sday(int year,int day,int res[]) 
+Date cal_dayew(int year,int day) // Calculate the day of the year on which date
 {
-	int result[3];
-	return cal_day_add(year - 1,12,31,day,result);
+	return cal_day_add(year - 1,12,31,day);
 }
 
-int sday(void)
+int dayew(void) 
 {
-	int result[3];
-	printf("Enter year and day: ");
+	printf("Enter year and day(format:YEAR-DAY): ");
 	int days,year;scanf("%d %d",&year,&days);
-	int *u = cal_sday(2020,days,result);
-	printf("The No.%d day of %d is %d-%d-%d \n",days,year,*(u + 0),*(u + 1),*(u + 2));
-
+	Date u = cal_sday(2020,days);
+	printf("The No.%d day of %d is ",days,year);
+    print(&u);
+	
 	return 0;
 }

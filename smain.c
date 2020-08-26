@@ -15,6 +15,7 @@
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
+#include "struct.h"
 
 /* define constant block */
 
@@ -70,7 +71,7 @@ int month_days(int the_year,int the_month)
 	return 0;
 }
 
-int * cal_day_add(int year,int month,int day,int offset,int res[]) // Calculate the days after a day in a year
+Date cal_day_add(int year,int month,int day,int offset) // Calculate the days after a day in a year
 {
 	int month_day = month_days(year,month);
 	day += offset;
@@ -82,7 +83,7 @@ int * cal_day_add(int year,int month,int day,int offset,int res[]) // Calculate 
 		day -= month_days(year,month - 1);
 	}
 
-	res[0] = year,res[1] = month,res[2] = day;
+	Date res = {year,month,day};
 
 	return res;
 }
@@ -90,14 +91,15 @@ int * cal_day_add(int year,int month,int day,int offset,int res[]) // Calculate 
 int day_add(void)  // Corresponding to 1
 { 
 	printf("Enter the year(format: YEAR-MONTH-DAY): ");
-	int year = 0,month = 0,day = 0,arr[3] = {0,0,0};
+	int year = 0,month = 0,day = 0;
 	scanf("%d-%d-%d",&year,&month,&day);
 	int off = 0;  // off isn't office,off is offset
 	printf("Enter the offset: ");
 	scanf("%d",&off);
 
-	int *results = cal_day_add(year,month,day,off,arr);
-	printf("%d-%d-%d in two days,it's %d-%d-%d \n",year,month,day,*(results + 0),*(results + 1),*(results + 2));
+	Date results = cal_day_add(year,month,day,off);
+	printf("%d-%d-%d in two days,it's ",year,month,day);
+	print(&results);
 
 	return 0;
 
@@ -132,7 +134,7 @@ int command(void) // command mode function
 	{
 		printf("ctime> ");
 		scanf("%s",string);
-		if (strcmp("exit",string) == 0) return 0; // exit command mode
+		if (strcmp("exit",string) == 0) exit(123); // exit command mode
 		else if (strcmp("start",string) == 0) choice(); // start use
 	}
 } 
@@ -141,9 +143,9 @@ int choice(void)
 { 
 	printf("We offer the following services(still to be expanded) \n");
 	printf(" 1. Calculate the days after a day in a year \n 2. Calculate the day of the week for a date \n 3. Calculate the date of mother's day in a year \n ");
-	printf("4. Calculating the zodiac of a year \n 5. Calculate the days after the year \n 6. Calculate the date of father's day in a year \n ");
+	printf("4. Calculating the zodiac of a year \n 5. Calculate the day of the year on which date \n 6. Calculate the date of father's day in a year \n ");
 	printf("7. Calculate the date and quantity of Black Friday \n 8. Calculate the interval of two dates  \n ");
-	printf("9. Calculate the day of the year on which date \n ...... \n");
+	printf(" \n ...... \n");
 	printf("Press 1 to 9 to choice: ");
 	int op = 0;
 	scanf("%d",&op);
@@ -155,15 +157,13 @@ int choice(void)
 
 	if (op == 4) zodiac();
 
-	if (op == 5) dafy();
+	if (op == 5) dayew();
 
 	if (op == 6) fday();
 
 	if (op == 7) bf();
 
 	if (op == 8) idays();
-
-	if (op == 9) sday();
 
 	return 0;
 }
