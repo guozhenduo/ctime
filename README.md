@@ -19,12 +19,11 @@ We offer the following services(still to be expanded)
  1. Calculate the days after a day in a year
  2. Calculate the day of the week for a date
  3. Calculate the date of mother's day in a year
+ 5. Calculate the day of the year on which date
  4. Calculating the zodiac of a year
- 5. Calculate the days after the year
  6. Calculate the date of father's day in a year
  7. Calculate the date and quantity of Black Friday
  8. Calculate the interval of two dates
- 9. Calculate the day of the year on which date
  ......
 Press 1 to 9 to choice: 7
 Enter the year: 2020

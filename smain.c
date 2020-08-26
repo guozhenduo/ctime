@@ -129,7 +129,7 @@ int wdw(void)  // Corresponding to 2
 
 int command(void) // command mode function
 {
-    char string[10];
+        char string[10];
 	while (1)
 	{
 		printf("ctime> ");
