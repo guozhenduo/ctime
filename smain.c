@@ -155,7 +155,7 @@ int choice(void)
     {
 	case 1: day_add();return 0;
 	case 2: wdw();return 0;
-	case 3: mday()return 0;
+	case 3: mday();return 0;
 	case 4: zodiac();return 0;
 	case 5: dayew();return 0;
         case 6: fday();return 0;
