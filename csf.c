@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 // csf : Calculate Special Festival
 extern char table3[][12]; // initialize two arrays
