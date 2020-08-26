@@ -1,1 +1,1 @@
-#include "main.c"
+#include "../main.c"
