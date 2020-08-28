@@ -30,7 +30,7 @@ We offer the following services(still to be expanded)
  7. Calculate the date and quantity of Black Friday
  8. Calculate the interval of two dates
  ......
-Press 1 to 9 to choice: 7
+Press 1 to 8 to choice: 7
 Enter the year: 2020
 2020-3-13
 2020-11-13
@@ -54,6 +54,6 @@ It will add more.
 [MIT License](https://github.com/guozhenduo/ctime/blob/master/LICENSE)
 
 # Support
-ctime can't support these:
+ctime does not support the following C standards:
 * C89
 * C90 
