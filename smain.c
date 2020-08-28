@@ -140,11 +140,11 @@ int choice(void)
         scanf("%d",&op);
         switch (op)
         {
-	        case 1: day_add();continue;
-	        case 2: wdw();continue;
-	        case 3: mday();continue;
-	        case 4: zodiac();continue;
-	        case 5: dayew();continue;
+            case 1: day_add();continue;
+	    case 2: wdw();continue;
+	    case 3: mday();continue;
+	    case 4: zodiac();continue;
+	    case 5: dayew();continue;
             case 6: fday();continue;
             case 7: bf();continue;
             case 8: idays();continue; 
