@@ -49,3 +49,8 @@ It will add more.
 
 # License 
 [MIT License](https://github.com/guozhenduo/ctime/blob/master/LICENSE)
+
+# Support
+ctime can't support these:
+* C89
+* C90 
