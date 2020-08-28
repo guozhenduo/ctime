@@ -46,6 +46,7 @@ Look at sample1.c,sample2.c,sample3.c,sample1.py .
 `ctime mode`
  - command
  - choice
+ - function
 
 It will add more.
 

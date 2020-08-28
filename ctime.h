@@ -4,6 +4,7 @@
 #include "smain1.c"
 #include "csf.c"
 #include "chtime.c"
+#include "function/func.c"
 
 extern int table[12];
 extern char table2[][7];
@@ -33,6 +34,7 @@ int * cal_bf(int year);
 int bf(void);
 int dayew(void);
 Date cal_dayew(int year,int day);
+int func(void);
 
 /* define constant block */
 

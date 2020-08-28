@@ -37,6 +37,7 @@ int bf(void);
 int idays(void);
 int choice(void);
 int dayew(void);
+int func(void);
 
 int is_leap(int year)
 {
@@ -120,31 +121,36 @@ int command(void) // command mode function
         printf("ctime> ");
 	scanf("%s",string);
         if (strcmp("exit",string) == 0) exit(123); // exit command mode
-        else if (strcmp("start",string) == 0) choice(); // start use
+        else if (strcmp("start",string) == 0) choice(); // start choice mode
+        else if (strcmp("function",string) == 0) func(); // start function mode
     }
 } 
 
 int choice(void) 
 { 
-    printf("We offer the following services(still to be expanded) \n");
-    printf(" 1. Calculate the days after a day in a year \n 2. Calculate the day of the week for a date \n 3. Calculate the date of mother's day in a year \n ");
-    printf("4. Calculating the zodiac of a year \n 5. Calculate the day of the year on which date \n 6. Calculate the date of father's day in a year \n ");
-    printf("7. Calculate the date and quantity of Black Friday \n 8. Calculate the interval of two dates  \n ");
-    printf(" \n ...... \n");	
-    printf("Press 1 to 9 to choice: ");
-    int op = 0;
-    scanf("%d",&op);
-    switch (op)
+    while (1)
     {
-	case 1: day_add();return 0;
-	case 2: wdw();return 0;
-	case 3: mday();return 0;
-	case 4: zodiac();return 0;
-	case 5: dayew();return 0;
-        case 6: fday();return 0;
-        case 7: bf();return 0;
-        case 8: idays();return 0; 
-        /* Selecte execution */
+        printf("We offer the following services(still to be expanded) \n");
+        printf(" 1. Calculate the days after a day in a year \n 2. Calculate the day of the week for a date \n 3. Calculate the date of mother's day in a year \n ");
+        printf("4. Calculating the zodiac of a year \n 5. Calculate the day of the year on which date \n 6. Calculate the date of father's day in a year \n ");
+        printf("7. Calculate the date and quantity of Black Friday \n 8. Calculate the interval of two dates  \n ");
+        printf("9. exit choice mode \n ...... \n");	
+        printf("Press 1 to 9 to choice: ");
+        int op = 0;
+        scanf("%d",&op);
+        switch (op)
+        {
+	        case 1: day_add();continue;
+	        case 2: wdw();continue;
+	        case 3: mday();continue;
+	        case 4: zodiac();continue;
+	        case 5: dayew();continue;
+            case 6: fday();continue;
+            case 7: bf();continue;
+            case 8: idays();continue; 
+            case 9: return 0;;
+            /* Selecte execution */
+        }
     }
 
     return 0;

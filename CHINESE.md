@@ -39,6 +39,7 @@ $
 `ctime模式`
  - command
  - choice
+ - function
 
 这会继续增加的。
 
