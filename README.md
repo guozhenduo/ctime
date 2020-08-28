@@ -3,6 +3,8 @@ This is a time tool written in C language.
 
 There are still some overly lengthy code that will be improved in the next release
 
+[中文版](https://github.com/guozhenduo/ctime/blob/master/CHINESE.md)
+
 # Usage
 `ctime` doesn't require any configuration from you.
 
