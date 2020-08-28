@@ -3,7 +3,7 @@
 * Maintainer: SuChenguo                                      *
 * Create time: 2020 Aug 06 11:23                             *
 * Update time: 2020 Aug 24 10:44                             *
-* VERSION: 0.1                                               *
+* VERSION: 0.2                                               *
 * LINCENSE: MIT License                                      *
 * More ways to use it are waiting for you to find out        *
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  */
