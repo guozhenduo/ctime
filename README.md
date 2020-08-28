@@ -53,6 +53,6 @@ It will add more.
 [MIT License](https://github.com/guozhenduo/ctime/blob/master/LICENSE)
 
 # Support
-ctime can't support these:
+ctime does not support the following C standards:
 * C89
 * C90 
