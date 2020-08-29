@@ -22,7 +22,7 @@ int cal_wdw(int year,int month,int day);
 int wdw(void);
 int command(void);
 int choice(void);
-int interval_days(int start[],int end[]);
+int interval_days(Date start,Date end);
 int idays(void);
 int cal_zodiac(int year);
 int zodiac(void);
