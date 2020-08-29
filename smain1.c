@@ -80,7 +80,7 @@ Date cal_dayew(int year,int day) // Calculate the day of the year on which date
 int dayew(void) 
 {
     printf("Enter year and day(format:YEAR-DAY): ");
-    int days,year;scanf("%d %d",&year,&days);
+    int days,year;scanf("%d-%d",&year,&days);
     Date u = cal_dayew(2020,days);
     printf("The No.%d day of %d is ",days,year);
     print(&u);

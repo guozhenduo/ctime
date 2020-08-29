@@ -119,9 +119,9 @@ int command(void) // command mode function
     while (1)
     {
         printf("ctime> ");
-	scanf("%s",string);
+        scanf("%s",string);
         if (strcmp("exit",string) == 0) exit(123); // exit command mode
-        else if (strcmp("start",string) == 0) choice(); // start choice mode
+        else if (strcmp("choice",string) == 0) choice(); // start choice mode
         else if (strcmp("function",string) == 0) func(); // start function mode
     }
 } 
@@ -138,19 +138,22 @@ int choice(void)
         printf("Press 1 to 9 to choice: ");
         int op = 0;
         scanf("%d",&op);
+
+        if (op != 9) printf("\n========Start======== \n");
         switch (op)
         {
-            case 1: day_add();continue;
-	    case 2: wdw();continue;
-	    case 3: mday();continue;
-	    case 4: zodiac();continue;
-	    case 5: dayew();continue;
-            case 6: fday();continue;
-            case 7: bf();continue;
-            case 8: idays();continue; 
-            case 9: return 0;;
+            case 1: day_add();break;
+            case 2: wdw();break;
+            case 3: mday();break;
+            case 4: zodiac();break;
+            case 5: dayew();break;
+            case 6: fday();break;
+            case 7: bf();break;
+            case 8: idays();break; 
+            case 9: return 0;
             /* Selecte execution */
         }
+        if (op != 9) printf("\n=========End========= \n\n");
     }
 
     return 0;
