@@ -11,6 +11,18 @@ void _print_start(char *str)
 {
     printf("\n========Start run %s function======== \n",str);
 }
+
+int run_is_leap(void)
+{
+    int year;
+    printf("Enter the argument of is_leap(format:arg1,arg2,...): ");
+    scanf("%d",&year);
+
+    printf("result is %d \n",is_leap(year));
+
+    return 1;
+}
+
 int run(char *name)
 {
     if (EQUAL(name,"bf")) bf();
@@ -20,6 +32,7 @@ int run(char *name)
     else if (EQUAL(name,"mday")) mday();
     else if (EQUAL(name,"idays")) idays();
     else if (EQUAL(name,"dayew")) dayew();
+    else if (EQUAL(name,"is_leap")) run_is_leap();
     else if (EQUAL(name,"exit")) return 0;
 
     return 1; 

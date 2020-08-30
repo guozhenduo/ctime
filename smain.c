@@ -41,6 +41,12 @@ int func(void);
 
 int is_leap(int year)
 {
+    if (year == 0) 
+    {
+        printf("Year Number Error \n");
+        return 0;
+    }
+
     return year % 4 == 0 ? 1 : 0; // if  +year % 4 == 0 return value is 1 else 0
 }
 
