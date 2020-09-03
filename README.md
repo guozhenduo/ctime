@@ -1,4 +1,6 @@
 # ctime
+[![GitHub watchers](https://img.shields.io/github/watchers/guozhenduo/ctime.svg)](https://github.com/guozhenduo/ctime/watchers)
+
 This is a time tool written in C language.
 
 There are still some overly lengthy code that will be improved in the next release
