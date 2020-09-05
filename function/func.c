@@ -45,18 +45,21 @@ int func(void)
         scanf("%s",func_name);
 
         if (counter == 0 || (counter - 1) == num) strcpy(back_name,func_name);
-
-        if (num == 0) num+=2;
-        else num++;
-        counter++;
-
-        if (EQUAL(func_name,"_")) strcpy(func_name, back_name);
-        if (!(EQUAL(func_name, "exit"))) printf("\n=========Start run %s function========= \n",func_name);
+         
+        if (EQUAL(func_name,"_") && num == 0) 
+            printf("Can't find the back function! \n");
+            return 0;
+        else if (EQUAL(func_name,"_")) strcpy(func_name, back_name);
+        else if (!(EQUAL(func_name, "exit"))) printf("\n=========Start run %s function========= \n",func_name);
 
         int i = run(func_name);
         if (!(EQUAL(func_name, "exit"))) printf("=========End run %s function========= \n\n",func_name);
                 
         if (i != 1) return 0; // Identify whether to exit normally
+
+        if (num == 0) num+=2;
+        else num++;
+        counter++;
     }
 
     return 0;
