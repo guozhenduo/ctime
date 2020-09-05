@@ -7,11 +7,6 @@
 
 #define EQUAL(a,b) (strcmp(a,b) == 0)
 
-void _print_start(char *str)
-{
-    printf("\n========Start run %s function======== \n",str);
-}
-
 int run_is_leap(void)
 {
     int year;
@@ -40,18 +35,27 @@ int run(char *name)
 
 int func(void)
 {
-    char func_name[10];
+    char func_name[10] = {0},back_name[10] = {0};
+    int counter = 0;
     int num = 0; // set a number, tell the program where func is pointing
 
     while (1)
     {
         printf("Enter function name(if want exit,enter \"exit\"): ");
         scanf("%s",func_name);
-        
-        if (!(EQUAL(func_name, "exit"))) _print_start(func_name);
+
+        if (counter == 0 || (counter - 1) == num) strcpy(back_name,func_name);
+
+        if (num == 0) num+=2;
+        else num++;
+        counter++;
+
+        if (EQUAL(func_name,"_")) strcpy(func_name, back_name);
+        if (!(EQUAL(func_name, "exit"))) printf("\n=========Start run %s function========= \n",func_name);
+
         int i = run(func_name);
         if (!(EQUAL(func_name, "exit"))) printf("=========End run %s function========= \n\n",func_name);
-
+                
         if (i != 1) return 0; // Identify whether to exit normally
     }
 
